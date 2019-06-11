@@ -16,7 +16,7 @@ class Configuration
 
     protected $password = '';
 
-    protected $host = 'https://circulodecredito-dev.apigee.net';
+    protected $host = '';
 
     protected $userAgent = 'APIHub/1.0.0/php';
 
