@@ -1,16 +1,14 @@
 <?php
 
-namespace APIHub\Client\Model;
+namespace VectoresSaldos\Client\Model;
 
 use \ArrayAccess;
-use \APIHub\Client\ObjectSerializer;
+use \VectoresSaldos\Client\ObjectSerializer;
 
 class Respuesta implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
-
     protected static $apihubModelName = 'Respuesta';
-
     protected static $apihubTypes = [
         'periodo' => 'string',
         'monto_pagar' => 'float',
@@ -19,7 +17,6 @@ class Respuesta implements ModelInterface, ArrayAccess
         'frecuencia' => 'string',
         'calendario' => 'float'
     ];
-
     protected static $apihubFormats = [
         'periodo' => 'yyyy-MM-dd',
         'monto_pagar' => 'float',
@@ -28,17 +25,14 @@ class Respuesta implements ModelInterface, ArrayAccess
         'frecuencia' => null,
         'calendario' => 'float'
     ];
-
     public static function apihubTypes()
     {
         return self::$apihubTypes;
     }
-
     public static function apihubFormats()
     {
         return self::$apihubFormats;
     }
-
     protected static $attributeMap = [
         'periodo' => 'periodo',
         'monto_pagar' => 'montoPagar',
@@ -47,7 +41,6 @@ class Respuesta implements ModelInterface, ArrayAccess
         'frecuencia' => 'frecuencia',
         'calendario' => 'calendario'
     ];
-
     protected static $setters = [
         'periodo' => 'setPeriodo',
         'monto_pagar' => 'setMontoPagar',
@@ -56,7 +49,6 @@ class Respuesta implements ModelInterface, ArrayAccess
         'frecuencia' => 'setFrecuencia',
         'calendario' => 'setCalendario'
     ];
-
     protected static $getters = [
         'periodo' => 'getPeriodo',
         'monto_pagar' => 'getMontoPagar',
@@ -65,29 +57,23 @@ class Respuesta implements ModelInterface, ArrayAccess
         'frecuencia' => 'getFrecuencia',
         'calendario' => 'getCalendario'
     ];
-
     public static function attributeMap()
     {
         return self::$attributeMap;
     }
-
     public static function setters()
     {
         return self::$setters;
     }
-
     public static function getters()
     {
         return self::$getters;
     }
-
     public function getModelName()
     {
         return self::$apihubModelName;
     }
-
     protected $container = [];
-
     public function __construct(array $data = null)
     {
         $this->container['periodo'] = isset($data['periodo']) ? $data['periodo'] : null;
@@ -97,101 +83,77 @@ class Respuesta implements ModelInterface, ArrayAccess
         $this->container['frecuencia'] = isset($data['frecuencia']) ? $data['frecuencia'] : null;
         $this->container['calendario'] = isset($data['calendario']) ? $data['calendario'] : null;
     }
-
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-
         return $invalidProperties;
     }
-
     public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
     }
-
     public function getPeriodo()
     {
         return $this->container['periodo'];
     }
-
     public function setPeriodo($periodo)
     {
         $this->container['periodo'] = $periodo;
-
         return $this;
     }
-
     public function getMontoPagar()
     {
         return $this->container['monto_pagar'];
     }
-
     public function setMontoPagar($monto_pagar)
     {
         $this->container['monto_pagar'] = $monto_pagar;
-
         return $this;
     }
-
     public function getSaldoActual()
     {
         return $this->container['saldo_actual'];
     }
-
     public function setSaldoActual($saldo_actual)
     {
         $this->container['saldo_actual'] = $saldo_actual;
-
         return $this;
     }
-
     public function getSaldoVencido()
     {
         return $this->container['saldo_vencido'];
     }
-
     public function setSaldoVencido($saldo_vencido)
     {
         $this->container['saldo_vencido'] = $saldo_vencido;
-
         return $this;
     }
-
     public function getFrecuencia()
     {
         return $this->container['frecuencia'];
     }
-
     public function setFrecuencia($frecuencia)
     {
         $this->container['frecuencia'] = $frecuencia;
-
         return $this;
     }
-
     public function getCalendario()
     {
         return $this->container['calendario'];
     }
-
     public function setCalendario($calendario)
     {
         $this->container['calendario'] = $calendario;
-
         return $this;
     }
-
     public function offsetExists($offset)
     {
         return isset($this->container[$offset]);
     }
-
     public function offsetGet($offset)
     {
         return isset($this->container[$offset]) ? $this->container[$offset] : null;
     }
-
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -200,23 +162,18 @@ class Respuesta implements ModelInterface, ArrayAccess
             $this->container[$offset] = $value;
         }
     }
-
     public function offsetUnset($offset)
     {
         unset($this->container[$offset]);
     }
-
     public function __toString()
     {
-        if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
+        if (defined('JSON_PRETTY_PRINT')) {
             return json_encode(
                 ObjectSerializer::sanitizeForSerialization($this),
                 JSON_PRETTY_PRINT
             );
         }
-
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
-
-
