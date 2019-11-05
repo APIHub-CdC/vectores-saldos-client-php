@@ -10,17 +10,15 @@ Session.vim
 tmtags
 Thumbs.db
 Desktop.ini
-
 # ignore Composer downloads
 /vendor/*
 *.lock
-
 # keep some hiddens
 !.htaccess
 !/.gitignore
 .travis.yml
-
 # ignore keys
 
+test/Api/Test.php
 lib/Interceptor/*.p12
 lib/Interceptor/*.pem

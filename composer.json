@@ -1,18 +1,18 @@
 {
-    "name": "/",
+    "name": "apihub-cdc/vectores-saldos-client-php",
     "description": "",
     "keywords": [
-        "swagger",
+        "apihub",
         "php",
         "sdk",
         "api"
     ],
-    "homepage": "http://swagger.io",
+    "homepage": "https://developer.circulodecredito.com.mx",
     "license": "proprietary",
     "authors": [
         {
-            "name": "Swagger and contributors",
-            "homepage": "https://github.com/swagger-api/swagger-codegen"
+            "name": "VectoresSaldos and contributors",
+            "homepage": "https://github.com/APIHub-CdC"
         }
     ],
     "require": {
@@ -29,9 +29,9 @@
         "friendsofphp/php-cs-fixer": "~2.12"
     },
     "autoload": {
-        "psr-4": { "APIHub\\Client\\" : "lib/" }
+        "psr-4": { "VectoresSaldos\\Client\\" : "lib/" }
     },
     "autoload-dev": {
-        "psr-4": { "APIHub\\Client\\" : "test/" }
+        "psr-4": { "VectoresSaldos\\Client\\" : "test/" }
     }
 }
