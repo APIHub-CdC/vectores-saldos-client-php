@@ -163,7 +163,7 @@ class VectoresSaldosApi
                 'Missing the required parameter $request when calling getVectorSaldos'
             );
         }
-        $resourcePath = '/v1/vectores/saldos';
+        $resourcePath = '';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
